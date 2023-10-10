@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="az.library.BookController">
+   <children>
+      <VBox prefHeight="1080.0" prefWidth="1920.0" spacing="4.0" style="-fx-background-color: #bfbfbf;">
+         <children>
+            <HBox prefHeight="40.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label prefHeight="32.0" prefWidth="133.0" text="Kitabın Adı">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="nameTF" prefHeight="30.0" prefWidth="246.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="15.0" layoutY="15.0" text="Müəllif">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="authorTF" layoutX="50.0" layoutY="15.0" prefHeight="30.0" prefWidth="238.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets left="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label prefHeight="32.0" prefWidth="264.0" text="Kitabın qeydiyyat tarixi">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="registrationDateDP" prefHeight="31.0" prefWidth="239.0" />
+                  <Label layoutX="15.0" layoutY="15.0" prefHeight="32.0" prefWidth="121.0" text="Kitabın dili">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="languageCB" prefHeight="31.0" prefWidth="198.0" promptText="Dili seç" />
+               </children>
+               <padding>
+                  <Insets left="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="90.0" prefHeight="40.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveButtonAction" prefHeight="44.0" prefWidth="166.0" style="-fx-background-color: #e3b448;" text="Yadda saxla">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#deleteButtonAction" prefHeight="44.0" prefWidth="96.0" style="-fx-background-color: #cbd18f;" text="Sil">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#editButtonAction" prefHeight="44.0" prefWidth="134.0" style="-fx-background-color: #3a6b35;" text="Redaktə" textFill="#fffefe">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="searchTF" onAction="#searchTFAction" onKeyReleased="#searchTFKeyReleased" prefHeight="30.0" prefWidth="237.0" promptText="Axtarış">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets left="5.0" top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <TableView fx:id="booksTable" prefHeight="488.0" prefWidth="1916.0" style="-fx-background-color: gray;">
+               <columns>
+                  <TableColumn fx:id="idColumn" prefWidth="111.0" text="Kod" />
+                  <TableColumn fx:id="nameColumn" prefWidth="168.0" text="Kitabın adı" />
+                  <TableColumn fx:id="authorColumn" prefWidth="171.0" text="Müəllif" />
+                  <TableColumn fx:id="registrationDateColumn" minWidth="4.0" prefWidth="155.0" text="Qeydiyyat tarixi" />
+                  <TableColumn fx:id="languageColumn" minWidth="0.0" prefWidth="105.0" text="Dil" />
+               </columns>
+            </TableView>
+            <HBox layoutX="14.0" layoutY="146.0" prefHeight="40.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label fx:id="rowCountLabel" text="Kitab sayısı:">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="5.0" top="5.0" />
+               </padding>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="4.0" top="4.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
